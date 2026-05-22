@@ -894,6 +894,365 @@ body {
     box-shadow: 0 15px 40px rgba(37,211,102,0.6);
 }
 
+/* ========== SECCIÓN FAQ MEJORADA ========== */
+.faq {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #0a0a0a 0%, #0f0f0f 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de fondo decorativo */
+.faq::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #4ecdc4, #ff6b6b, transparent);
+}
+
+.faq::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ff6b6b, #4ecdc4, transparent);
+}
+
+.faq .section-subtitle {
+    margin-bottom: 60px;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 28px;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(78, 205, 196, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Línea decorativa al hacer hover */
+.faq-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    transition: height 0.4s ease;
+}
+
+.faq-item:hover::before {
+    height: 100%;
+}
+
+.faq-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(78, 205, 196, 0.3);
+    background: rgba(30, 30, 35, 0.9);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.faq-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #4ecdc4;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+}
+
+.faq-item h3 i {
+    color: #ff6b6b;
+    font-size: 1.3rem;
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover h3 i {
+    transform: scale(1.1);
+}
+
+.faq-item p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.faq-item p:last-child {
+    margin-bottom: 0;
+}
+
+.faq-item strong {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+/* Nota de letra pequeña en FAQ */
+.faq-note {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.8rem;
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* ========== MEJORAS ADICIONALES GLOBALES ========== */
+
+/* Botón Solicitar presupuesto (si decides añadirlo) */
+.btn-presupuesto {
+    background: linear-gradient(135deg, #4ecdc4, #ff6b6b);
+    color: white;
+    box-shadow: 0 10px 30px rgba(78, 205, 196, 0.3);
+}
+
+.btn-presupuesto:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(78, 205, 196, 0.5);
+}
+
+/* Precio destacado en formulario */
+.precio-destacado {
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(255, 107, 107, 0.1));
+    border-radius: 50px;
+    font-size: 0.9rem;
+    color: #4ecdc4;
+    font-weight: 500;
+    border: 1px solid rgba(78, 205, 196, 0.2);
+}
+
+.precio-destacado i {
+    margin-right: 8px;
+    color: #ffc107;
+}
+
+/* Mejora en los botones de hero */
+.hero-buttons {
+    margin-bottom: 25px;
+}
+
+/* Mejora en las tarjetas de proyectos */
+.proyecto-card {
+    background: linear-gradient(135deg, #1a1a1a, #151515);
+}
+
+/* Mejora en servicios */
+.servicio {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
+}
+
+/* ========== RESPONSIVE MEJORADO ========== */
+@media (max-width: 768px) {
+    .faq {
+        padding: 60px 0;
+    }
+    
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .faq-item {
+        padding: 20px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1.1rem;
+        gap: 10px;
+    }
+    
+    .faq-item h3 i {
+        font-size: 1.1rem;
+        width: 25px;
+    }
+    
+    .faq-item p {
+        font-size: 0.9rem;
+    }
+    
+    .precio-destacado {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .faq {
+        padding: 40px 0;
+    }
+    
+    .faq-item {
+        padding: 16px;
+    }
+    
+    .faq-item h3 {
+        font-size: 1rem;
+    }
+    
+    .faq-item p {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== SECCIÓN PRECIOS ========== */
+.precios {
+    padding: 100px 0;
+    background: #0f0f0f;
+}
+
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.precio-card {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 35px 25px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+}
+
+.precio-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(78, 205, 196, 0.3);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.precio-card.destacado {
+    background: linear-gradient(135deg, #1a1a1a, #1f1f1f);
+    border: 1px solid rgba(78, 205, 196, 0.5);
+    transform: scale(1.02);
+}
+
+.precio-badge-popular {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.precio-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.precio-header h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.precio-valor {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #4ecdc4;
+}
+
+.precio-valor span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.precio-valor small {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.precio-header p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: 8px;
+}
+
+.precio-lista {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.precio-lista li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+}
+
+.precio-lista li i {
+    width: 20px;
+}
+
+.precio-lista li .fa-check {
+    color: #4ecdc4;
+}
+
+.precio-lista li .fa-times {
+    color: #ff6b6b;
+}
+
+.precio-lista li .no {
+    opacity: 0.5;
+}
+
+.precio-card .btn-block {
+    width: 100%;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .precios {
+        padding: 60px 0;
+    }
+    
+    .precios-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .precio-card {
+        padding: 25px 20px;
+    }
+    
+    .precio-card.destacado {
+        transform: scale(1);
+    }
+    
+    .precio-valor {
+        font-size: 2rem;
+    }
+}
+
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
